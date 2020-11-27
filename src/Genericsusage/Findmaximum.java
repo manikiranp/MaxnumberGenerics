@@ -14,21 +14,36 @@ public class Findmaximum {
 		Findmaximum method= new Findmaximum();
 		System.out.println("Finding maximum from input using generics");
 		Integer[] intarray= new Integer[3];
-		System.out.println("Enter Three Numbers:");
+		Double[] doublearray= new Double[3];
+		System.out.println("Enter Three Double Numbers:");
+		for (int i=0;i<doublearray.length;i++) {
+			doublearray[i]= inp.nextDouble();
+		}
+		System.out.println("Enter Three Integer Numbers:");
 		for (int i=0;i<intarray.length;i++) {
-		intarray[i]= inp.nextInt(); 
+			intarray[i]= inp.nextInt();
 		}
 		
 		method.Printmax(intarray);
+		method.Printmax(doublearray);
 		
 			
 		}
 
 
-		public int  Printmax(Integer[] intarray) {
-		List<Integer> intstream = Arrays.asList(intarray);
+		public double  Printmax(Double[] doublearray) {
+			List<Double> arrstream = Arrays.asList(doublearray);
+			Double maximum=arrstream.stream().max(Comparator.comparingDouble(Double::doubleValue)).orElse(null);
+			System.out.println("maximum Double number:"+maximum);
+			
+			return maximum;
+		
+	}
 
-		Integer maximum=intstream.stream().max(Comparator.comparing(Integer::intValue)).orElse(null);
+
+		public int  Printmax(Integer[] intarray) {
+		List<Integer> arrstream = Arrays.asList(intarray);
+		Integer maximum=arrstream.stream().max(Comparator.comparing(Integer::intValue)).orElse(null);
 		System.out.println("maximum number:"+maximum);
 		return maximum;
 
