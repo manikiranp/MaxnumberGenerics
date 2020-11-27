@@ -10,15 +10,20 @@ public class FindmaximumTest {
 	@Test
 	public  void Printmax_at_firstposition() {
 		Integer[] intarray= {966,84,90};
-		int	result=validation.Printmax(intarray);
-		Assert.assertEquals(966, result);
+		Assert.assertEquals(966, validation.Printmax(intarray));
 	}
-		@Test
+	@Test
 	public  void Printmax_at_secondposition() {	
-		Integer[] intarray= {121,123,90};
-		int	result=validation.Printmax(intarray);
-		Assert.assertEquals(123, result);
-
+		Integer[] intarray= {121,1323,90};
+		Assert.assertEquals(1323, validation.Printmax(intarray));
+		
+	}
+		
+	@Test
+	public  void Printmax_at_thirdposition() {
+		
+		Integer[] intarray= {922,629,982};
+		Assert.assertEquals(982, validation.Printmax(intarray));
 	
 			
 		
