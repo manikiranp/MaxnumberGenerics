@@ -15,20 +15,35 @@ public class Findmaximum {
 		System.out.println("Finding maximum from input using generics");
 		Integer[] intarray= new Integer[3];
 		Double[] doublearray= new Double[3];
-		System.out.println("Enter Three Double Numbers:");
-		for (int i=0;i<doublearray.length;i++) {
-			doublearray[i]= inp.nextDouble();
-		}
+		String[] stringarray=new String[3];
 		System.out.println("Enter Three Integer Numbers:");
 		for (int i=0;i<intarray.length;i++) {
 			intarray[i]= inp.nextInt();
 		}
+		System.out.println("Enter Three Double Numbers:");
+		for (int i=0;i<doublearray.length;i++) {
+			doublearray[i]= inp.nextDouble();
+		}
+		System.out.println("Enter Three Strings:");
+		for (int i=0;i<stringarray.length;i++) {
+			stringarray[i]= inp.next();
+		}
 		
 		method.Printmax(intarray);
 		method.Printmax(doublearray);
+		method.Printmax(stringarray);
+		
 		
 			
 		}
+	
+	public String  Printmax(String[] stringarray) {
+		List<String> arrstream = Arrays.asList(stringarray);
+		String maximum=arrstream.stream().max(Comparator.comparing(String::valueOf)).orElse(null);
+		System.out.println("maximum Double number:"+maximum);
+		return maximum;
+	
+}
 
 
 		public double  Printmax(Double[] doublearray) {
@@ -39,7 +54,7 @@ public class Findmaximum {
 			return maximum;
 		
 	}
-
+		
 
 		public int  Printmax(Integer[] intarray) {
 		List<Integer> arrstream = Arrays.asList(intarray);

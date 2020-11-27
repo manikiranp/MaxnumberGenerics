@@ -34,7 +34,7 @@ public class FindmaximumTest {
 	}
 	
 	@Test
-	public  void Printmax_at_secondposition_double() {
+	public   void Printmax_at_secondposition_double() {
 		Double[] doublearray= {92.3,622.9,9.82};
 		Assert.assertEquals(622.9, validation.Printmax(doublearray));
 	}
