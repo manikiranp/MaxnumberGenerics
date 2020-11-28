@@ -39,8 +39,10 @@ public class Findmaximum {
 	
 	public String  Printmax(String[] stringarray) {
 		List<String> arrstream = Arrays.asList(stringarray);
+		 
+	
 		String maximum=arrstream.stream().max(Comparator.comparing(String::valueOf)).orElse(null);
-		System.out.println("maximum Double number:"+maximum);
+		System.out.println("maximum String:"+maximum);
 		return maximum;
 	
 }
@@ -64,6 +66,6 @@ public class Findmaximum {
 
 		}
 		
-	
+		
 
 }

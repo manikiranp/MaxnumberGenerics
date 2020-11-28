@@ -27,21 +27,26 @@ public class FindmaximumTest {
 		Assert.assertEquals(982, validation.Printmax(intarray));		
 	}
 
+//	@Test
+//	public  void Printmax_at_firstposition_double() {
+//		Double[] doublearray= {922.3222,62.9,9.82};
+//		assertEquals(922.3222, validation.Printmax(doublearray));
+//	}
+//	
+//	@Test
+//	public   void Printmax_at_secondposition_double() {
+//		Double[] doublearray= {92.3,622.9,9.82};
+//		Assert.assertEquals(622.9, validation.Printmax(doublearray));
+//	}
+//	@Test
+//	public  void Printmax_at_thirdposition_double() {
+//		Double[] doublearray= {92.3,62.9,982.9};
+//		Assert.assertEquals(982.9, validation.Printmax(doublearray));
+//	}
 	@Test
-	public  void Printmax_at_firstposition_double() {
-		Double[] doublearray= {922.3222,62.9,9.82};
-		assertEquals(922.3222, validation.Printmax(doublearray));
-	}
-	
-	@Test
-	public   void Printmax_at_secondposition_double() {
-		Double[] doublearray= {92.3,622.9,9.82};
-		Assert.assertEquals(622.9, validation.Printmax(doublearray));
-	}
-	@Test
-	public  void Printmax_at_thirdposition_double() {
-		Double[] doublearray= {92.3,62.9,982.9};
-		Assert.assertEquals(982.9, validation.Printmax(doublearray));
+	public  void Printmax_at_firstposition_string() {
+		String[] stringarray= {"scdc","aaa","dcd"};
+		Assert.assertEquals("scdc", validation.Printmax(stringarray));
 	}
 
 }
