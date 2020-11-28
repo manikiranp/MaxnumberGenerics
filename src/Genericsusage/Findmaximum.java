@@ -6,8 +6,9 @@ import java.util.List;
 import java.util.Scanner;
 
 
-public class Findmaximum {
+public class Findmaximum<T> {
 	private static Scanner inp= new Scanner(System.in);
+	private T[] inptarray;
 	
 
 	public static void main(String[] args) {
@@ -32,40 +33,42 @@ public class Findmaximum {
 		method.Printmax(intarray);
 		method.Printmax(doublearray);
 		method.Printmax(stringarray);
-		
-		
 			
 		}
 	
-	public String  Printmax(String[] stringarray) {
-		List<String> arrstream = Arrays.asList(stringarray);
-		 
-	
-		String maximum=arrstream.stream().max(Comparator.comparing(String::valueOf)).orElse(null);
-		System.out.println("maximum String:"+maximum);
-		return maximum;
-	
-}
-
-
-		public double  Printmax(Double[] doublearray) {
-			List<Double> arrstream = Arrays.asList(doublearray);
-			Double maximum=arrstream.stream().max(Comparator.comparingDouble(Double::doubleValue)).orElse(null);
-			System.out.println("maximum Double number:"+maximum);
-			
-			return maximum;
+	public <T extends Comparable <T>>  T Printmax(T[] inptarray) {
+		List<T> arrstream = Arrays.asList(inptarray);
 		
-	}
+		T maximum=arrstream.get(0) ;
 		
-
-		public int  Printmax(Integer[] intarray) {
-		List<Integer> arrstream = Arrays.asList(intarray);
-		Integer maximum=arrstream.stream().max(Comparator.comparing(Integer::intValue)).orElse(null);
-		System.out.println("maximum number:"+maximum);
-		return maximum;
-
+		for (int i=1;i<arrstream.size();i++) {
+		if(arrstream.get(i).compareTo(maximum) > 0) 
+			maximum=arrstream.get(i);
 		}
-		
-		
-
+		System.out.println("maximum:"+maximum);
+		return maximum;
+		}
 }
+
+//
+//		public double  Printmax(Double[] inptarray) {
+//			List<Double> arrstream = Arrays.asList(inptarray);
+//			Double maximum=arrstream.stream().max(Comparator.comparingDouble(Double::doubleValue)).orElse(null);
+//			System.out.println("maximum Double number:"+maximum);
+//			
+//			return maximum;
+//		
+//	}
+//		
+//
+//		public int  Printmax(Integer[] inptarray) {
+//		List<Integer> arrstream = Arrays.asList(inptarray);
+//		Integer maximum=arrstream.stream().max(Comparator.comparing(Integer::intValue)).orElse(null);
+//		System.out.println("maximum number:"+maximum);
+//		return maximum;
+//
+////		}
+//		
+//		
+//
+//}
