@@ -48,5 +48,15 @@ public class FindmaximumTest {
 		String[] stringarray= {"scdc","aaa","dcd"};
 		Assert.assertEquals("scdc", validation.Printmax(stringarray));
 	}
+	@Test
+	public  void Printmax_at_secondposition_string() {
+		String[] stringarray= {"scdc","taa","dcd"};
+		Assert.assertEquals("taa", validation.Printmax(stringarray));
+	}
+	@Test
+	public  void Printmax_at_thirdposition_string() {
+		String[] stringarray= {"acdc","taa","zcd"};
+		Assert.assertEquals("zcd", validation.Printmax(stringarray));
+	}
 
 }
